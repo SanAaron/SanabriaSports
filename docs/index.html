@@ -1,1 +1,55 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Portafolio</title><base href="/"><meta name="viewport" content="width=device-width,initial-scale=1"><!--<link rel="icon" type="image/x-icon" href="favicon.ico">--><link rel="icon" type="image/svg+xml" href="assets/img/urku-ico.svg"><link rel="stylesheet" href="assets/css/aurora-pack.min.css"><link rel="stylesheet" href="assets/css/aurora-theme-base.min.css"><link rel="stylesheet" href="assets/css/urku.css"><link href="styles.58bad140d71a36cf8249.bundle.css" rel="stylesheet"/></head><body><app-root></app-root><script src="assets/js/svg4everybody.min.js"></script><script>svg4everybody();</script><script type="text/javascript" src="inline.bf8e63c9290f07523e67.bundle.js"></script><script type="text/javascript" src="polyfills.ad37cd45a71cb38eee76.bundle.js"></script><script type="text/javascript" src="main.f334ecedc0adf2da5546.bundle.js"></script></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Portafolio</title><base href="/"><meta name="viewport" content="width=device-width,initial-scale=1"><!--<link rel="icon" type="image/x-icon" href="favicon.ico">--><link rel="icon" type="image/svg+xml" href="assets/img/urku-ico.svg"><link rel="stylesheet" href="assets/css/aurora-pack.min.css"><link rel="stylesheet" href="assets/css/aurora-theme-base.min.css"><link rel="stylesheet" href="assets/css/urku.css"><link rel="stylesheet" href="assets/css/login.css"><link href="styles.58bad140d71a36cf8249.bundle.css" rel="stylesheet"/></head><body><div id="Login" class="login"><h1>Sanabria Sports Online</h1><br><br><button type="button" name="button" id="btn-facebook">Ingresar Con Facebook</button></div><div id="Logeado"><h4 class="usuario rk-logo">Hola</h4><button type="button" name="button" id="btn-facebook-cerrar">Cerrar Sesion</button></div><app-root></app-root><script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script><script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script><script src="assets/js/svg4everybody.min.js"></script><script>svg4everybody();</script><script type="text/javascript">// Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAP1HbKYrAzDfGv1QkN-oWuuDuhNe1I6JI",
+    authDomain: "paginaweb-62bd6.firebaseapp.com",
+    databaseURL: "https://paginaweb-62bd6.firebaseio.com",
+    projectId: "paginaweb-62bd6",
+    storageBucket: "paginaweb-62bd6.appspot.com",
+    messagingSenderId: "612175122211"
+  };
+  firebase.initializeApp(config);
+  function IngresoFacebook(){
+      if (!firebase.auth().currentUser) {
+        var provider = new firebase.auth.FacebookAuthProvider();
+
+      provider.addScope("public_profile");
+
+      firebase.auth().signInWithPopup(provider).then (function(result) {
+
+       var token = result.credential.accesstoken;
+       var user  = result.user;
+       var name  = result.user.displayName;
+       $('#Login').css('display', 'none') && $('#Logeado').css('display', 'block');
+
+      document.querySelector('h4.usuario').textContent = 'Bienvenido ' + name;
+
+       $('body').removeClass('invisible');
+       $('div').removeClass('login');
+       $('body').addClass('visible');
+       console.log(name);
+     }).catch (function(error) {
+          var errorCode    = error.code;
+          var errorMessage = error.message;
+          var erroremail   = error.email;
+          var credential   = error.credential;
+
+          if(errorCode === 'auth/account-exists-with-different-credential'){
+            alert('Es el mismo usuario');
+          }
+     });
+    } else{
+      firebase.auth().signOut().then(function() {
+        console.log("Cerro Sesion");
+        $('#Login').css('display', 'block') && $('#Logeado').css('display', 'none');
+        $('body').removeClass('visible');
+        $('body').addClass('invisible');
+        $('div').addClass('login');
+        // Sign-out successful.
+      }).catch(function(error) {
+        // An error happened.
+      });
+    }
+  }
+
+  document.getElementById('btn-facebook').addEventListener('click',IngresoFacebook,false);
+  document.getElementById('btn-facebook-cerrar').addEventListener('click',IngresoFacebook,false);</script><script type="text/javascript" src="inline.9b9723e67d4ef1e5c436.bundle.js"></script><script type="text/javascript" src="polyfills.28a4529085f0f34d70ea.bundle.js"></script><script type="text/javascript" src="main.fb1bc2189fbf241bc12c.bundle.js"></script></body></html>
