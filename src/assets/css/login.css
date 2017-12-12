@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+#Login{
+
+}
+.login h1{
+  font-family: 'Lobster';
+  color: #2c363f;
+  background: white;
+  padding: 10px;
+}
+.login button{
+  width: 400px;
+  text-decoration: none;
+  border-radius: 7px;
+  border: none;
+  padding: 15px 20px;
+  background-color: #3B5998;
+  font-size: 20px;
+  color: white;
+
+}
+.login{
+  background-color: #2c363f;
+  width: auto;
+  height: 2000px;
+  padding-top: 150px;
+  text-align: center;
+
+  -webkit-box-shadow: 4px 3px 5px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 4px 3px 5px 0px rgba(0,0,0,0.5);
+  box-shadow: 4px 3px 5px 0px rgba(0,0,0,0.5);
+  margin: 0 0 2000px 0;
+}
+#Logeado{
+  background-color:  #2c363f;
+  display: block;
+  padding: 10px 10px 0px 10px;
+  display: inline-block;
+}
+#Logeado h4{
+  display: inline-block;
+  color: white;
+}
+#Logeado button{
+  background-color: #3B5998;
+  border: none;
+  padding: 10px;
+  color: white;
+  float: right;
+}
+body{
+  overflow-y: hidden!important;
+}
+.visible{
+  overflow-y: visible!important;
+}
+.invisible{
+  overflow-y: hidden!important;
+}

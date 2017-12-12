@@ -1,0 +1,49 @@
+<div class="ae-grid au-xs-ta-center au-mb-4 animated fadeIn">
+
+  <div *ngFor="let miembro of _is.equipo" 
+      class="ae-grid__item item-lg-4 ae-kappa au-mb-3">
+    <img [src]="miembro.url" alt="" class="au-mb-3">
+    <h5 class="ae-u-bolder au-mt-2">{{miembro.nombre}}</h5>
+    <p class="ae-u-bolder au-mb-3">{{miembro.subtitulo}}</p>
+    <p class="au-lg-ta-left au-mb-3 au-pl-4 au-pr-4">{{miembro.frase}}</p>
+    <a href="https://twitter.com/{{miembro.twitter}}" target="blank" class="ae-u-bolder au-underline">{{miembro.twitter}}</a>
+  </div>
+
+ 
+
+<div class="ae-grid au-pt-2">
+  <div class="ae-grid__item item-lg-8 item-lg--offset-2">
+    <h4 class="ae-u-bolder">Somo apasionados de los deportes</h4>
+    <p>Porque nostros sabemos de la importancia del mundo de los deportes, somos concientes la gran variedad de deportes que hay.</p>
+  </div>
+</div>
+
+<div class="ae-grid ae-grid--alt au-xs-ptp-1">
+  <div class="ae-grid__item--alt item-lg-4">
+    <h6 class="ae-u-boldest">Mision</h6>
+    <p class="au-lh-3">Comercializar ropa deportiva a nivel nacional. Y ofrecerles a nuestros clientes las mejores marcas para brindar productos
+      de alta calidad. </p>
+  </div>
+
+  <div class="ae-grid__item--alt item-lg-4">
+    <h6 class="ae-u-boldest">Vision</h6>
+    <p class="au-lh-3">Nuestra vision es poder llegar a ser en el 2020 una tienda muy reconicida a nivel nacional.</p>
+  </div>
+
+  <div class="ae-grid__item--alt item-lg-4">
+    <h6 class="ae-u-boldest">Nuestros Clientes</h6>
+    <p class="au-lh-3">Para nosotros nuestros cliente son sumamente importantes, es por eso que les ofrecemos productos de calidad y comodidad
+      para ellos. </p>
+    <!--p class="au-lh-3">Nemo enim ipsam voluptatem quia voluptas</p-->
+  </div>
+</div>
+
+<p class="au-flex au-pt-4 group-buttons">
+  <a href="portfolio.html" class="au-mt-4 arrow-button arrow-button--right arrow-button--out">
+    <span class="arrow-cont">
+      <svg>
+        <use xlink:href="assets/img/symbols.svg#arrow"></use>
+      </svg>
+    </span>
+  </a>
+</p>
